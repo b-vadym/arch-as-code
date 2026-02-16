@@ -459,33 +459,36 @@ sequenceDiagram
 -->
 
 ---
-layout: two-cols
+layout: default
 ---
 
-<div class="mb-8">
-  <h2 class="!mb-0">State machine: allowed transitions як "контракт"</h2>
+<div class="mb-6">
+  <h2 class="!mb-0">State machine: дозволені переходи як контракт</h2>
 </div>
 
-::left::
-**State machine** — це опис станів і **дозволених переходів** між ними.
+**State machine** — опис станів сутності та **дозволених переходів** між ними.
 
-Навіщо:
-- це стає **контрактом** між backend, frontend і QA
-- не дає “тихих” багів типу *переходимо в стан, якого не повинно бути*
-- спрощує валідації, edge-cases і тести
+**Навіщо**
+- Спільний **контракт** для backend, frontend і QA — усі знають, які переходи валідні
+- Усуває “тихих” баги: неможливо потрапити в стан, якого не передбачено
+- Спрощує валідації, edge-cases і тести
 
-Приклад: статуси ADR (RFC → Proposed → Accepted → Superseded).
+**Приклад** — життєвий цикл замовлення (Order): кожен крок і відміна явно описані.
 
-::right::
+
 ```mermaid
 stateDiagram-v2
-  [*] --> RFC
-  RFC --> Proposed: submit
-  Proposed --> Accepted: approve
-  Proposed --> RFC: revise
-  Accepted --> Superseded: replace
-  Superseded --> [*]
+  direction LR
+  [*] --> Draft
+  Draft --> Pending: submit
+  Pending --> Paid: pay
+  Pending --> Cancelled: cancel
+  Cancelled --> [*]
+  Paid --> Shipped: ship
+  Shipped --> Delivered: deliver
+  Delivered --> [*]
 ```
+
 
 <!--
 17:30–18:15. Завершуємо блок: transitions як контракт.
