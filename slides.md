@@ -728,6 +728,48 @@ layout: default
 layout: default
 ---
 
+<div class="mb-6">
+  <h2 class="!mb-0">Вибір tooling для діаграм</h2>
+  <p class="text-sm opacity-85 mt-1 m-0">Mermaid, PlantUML, Structurizr DSL · рендер через <a href="https://kroki.io/" target="_blank" rel="noopener">Kroki</a></p>
+</div>
+
+<table class="text-sm">
+  <thead>
+    <tr>
+      <th class="text-left pr-4">Критерій</th>
+      <th class="text-left px-2"><img src="https://www.google.com/s2/favicons?domain=mermaid.js.org&sz=32" width="20" height="20" class="inline-block align-middle rounded" alt="" /> <a href="https://mermaid.js.org/" target="_blank" rel="noopener">Mermaid</a></th>
+      <th class="text-left px-2"><img src="https://www.google.com/s2/favicons?domain=plantuml.com&sz=32" width="20" height="20" class="inline-block align-middle rounded" alt="" /> <a href="https://plantuml.com/" target="_blank" rel="noopener">PlantUML</a></th>
+      <th class="text-left px-2"><img src="https://www.google.com/s2/favicons?domain=structurizr.com&sz=32" width="20" height="20" class="inline-block align-middle rounded" alt="" /> <a href="https://structurizr.com/" target="_blank" rel="noopener">Structurizr DSL</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="pr-4 py-1"><strong>Залежності для рендеру</strong></td>
+      <td class="px-2 py-1">JS (браузер), без сервера</td>
+      <td class="px-2 py-1">потрібна <strong>Java</strong></td>
+      <td class="px-2 py-1">окремий рушій / сервіс</td>
+    </tr>
+    <tr>
+      <td class="pr-4 py-1"><strong>C4 / архітектура</strong></td>
+      <td class="px-2 py-1">плагіни, обмежено</td>
+      <td class="px-2 py-1">C4-PlantUML</td>
+      <td class="px-2 py-1">C4 нативно</td>
+    </tr>
+    <tr>
+      <td class="pr-4 py-1"><strong>У нашому пайплайні</strong></td>
+      <td class="px-2 py-1">нативно (в браузері)</td>
+      <td class="px-2 py-1">через Kroki (не тягнемо Java в CI)</td>
+      <td class="px-2 py-1">через Kroki</td>
+    </tr>
+  </tbody>
+</table>
+
+**Чому Kroki** — для PlantUML потрібна Java; для Structurizr — окремий рушій. [Kroki](https://kroki.io/) дає один API для всіх форматів (Mermaid, PlantUML, Structurizr, GraphViz, D2…), хостований або self-hosted, без Java та додаткових залежностей у нашому CI.
+
+---
+layout: default
+---
+
 <div class="mb-8">
   <h2 class="!mb-0">Чому документація “в коді” має шанс вижити</h2>
 </div>
