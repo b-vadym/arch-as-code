@@ -23,10 +23,11 @@ transition: slide-left
 Таймінг 30 хв (орієнтовно):
 - 0–3: проблема і визначення
 - 3–12: мінімальний набір артефактів + структура репо
-- 12–20: ADR (шаблон, життєвий цикл) + C4/seq/ERD як код
-- 20–26: tooling (Fumadocs) + як зробити процес сталим
-- 26–29: пастки + план впровадження
-- 29–30: CTA + питання
+- 12–18: C4/seq/ERD/state machine як код (діаграми)
+- 18–20: Tech stack / Infra / Solutions
+- 20–25: ADR і solution/
+- 25–29: tooling (Fumadocs) + як зробити процес сталим + пастки
+- 29–30: план впровадження + CTA + питання
 -->
 
 ---
@@ -73,7 +74,10 @@ layout: default
 - узгоджувати “мінімальний набір” артефактів
 - визначити, **що саме** документувати, щоб це допомагало команді
 
-> Висновок: якщо архітектура не збирається **поступово**, одним таском її не “наздоженеш”.
+<div class="mt-8 p-5 rounded-xl bg-primary/15 border-2 border-primary/40 text-lg font-semibold">
+
+**Висновок:** якщо архітектура не збирається **поступово**, одним таском її не “наздоженеш”.
+</div>
 
 <!--
 3:30–4:10. Тригер, який змусив переосмислити підхід.
@@ -450,114 +454,9 @@ stateDiagram-v2
 layout: section
 ---
 
-# Tooling
-
-### Чому Fumadocs
-
-<!-- 18:15–18:25 -->
-
----
-layout: default
----
-
-## Чому документація “в коді” має шанс вижити
-
-- Поруч з PR і review
-- Має **ownership** і історію
-- Searchable (і для людей, і для AI/LLM)
-- Може мати автоматизації (індекси, лінки, генерацію)
-
-Але потрібен інструмент, який **не заважає**.
-
-<!--
-18:25–19:30.
--->
-
----
-layout: two-cols
----
-
-## Fumadocs: сильні сторони для Architecture as Code
-
-::left::
-- Next.js + MDX
-- Навігація через `meta.json`
-- Пошук
-- Гарний UI (dark/light)
-- Компоненти для діаграм/вʼюверів
-
-::right::
-### Для команд
-- легко почати
-- легко стандартизувати
-- легко оновлювати
-
-> Головне: “правильний шлях” стає найпростішим.
-
-<!--
-19:30–21:00.
--->
-
----
-layout: two-cols
----
-
-## Mermaid + PlantUML: коли що використовувати
-
-::left::
-### Mermaid
-- швидко
-- достатньо для C4/flow/seq
-- прямо в MD/MDX
-
-### PlantUML
-- коли потрібна UML-нотація
-- ERD/seq на складні системи
-
-::right::
-```mermaid
-flowchart LR
-  Mdx[MDX_file] --> Route[Diagram_route]
-  Route --> Kroki[Kroki_service]
-  Kroki --> Svg[SVG]
-  Svg --> Viewer[Diagram_viewer]
-```
-
-<!--
-21:00–22:30.
--->
-
----
-layout: default
----
-
-## Docs pipeline: як зробити знання “видимим” у процесі
-
-```mermaid
-flowchart TD
-  Change[Code_change] --> Need{"Architecture impact?"}
-  Need -- yes --> ADR[Update_or_add_ADR]
-  Need -- yes --> Diag[Update_diagrams]
-  Need -- no --> PR[PR]
-  ADR --> PR
-  Diag --> PR
-  PR --> Review["Review (dev+arch)"]
-  Review --> CI[CI_build_docs]
-  CI --> Deploy[Deploy_docs]
-  Deploy --> Search[Search_and_onboarding]
-```
-
-<!--
-22:30–24:00. Це “architecture as code” як процес.
--->
-
----
-layout: section
----
-
 # Tech stack / Infrastructure / Solutions
 
-### артефакти “після діаграм” у навігації
+### артефакти "після діаграм" у навігації
 
 <!-- 24:00–24:10 -->
 
@@ -581,70 +480,11 @@ layout: default
 layout: section
 ---
 
-# Щоб це не померло
-
-### правила і ownership
-
-<!-- 26:00–26:10 -->
-
----
-layout: default
----
-
-## PR checklist (коротко і жорстко)
-
-- Якщо міняю boundaries/контракти → **ADR (фіксуємо рішення) або діаграма** в тому ж PR
-- Якщо додаю сервіс/інтеграцію → оновити **C1/C2**
-- Якщо міняю дані → оновити **ERD**
-- Якщо міняю критичний флоу → оновити **sequence**
-
-> Нехай CI не блокує, але checklist має бути “соціальним контрактом”.
-
-<!--
-26:10–27:30.
--->
-
----
-layout: default
----
-
-## Ownership: хто відповідає за якість знання
-
-- Власник розділу `architecture/*` (це role, не “титул”)
-- Ревʼю ADR: 1 domain + 1 platform
-- “Садівник” раз на квартал: прибрати/оновити superseded
-
-Мета: **зменшити ентропію**.
-
-<!--
-27:30–28:30.
--->
-
----
-layout: default
----
-
-## Пастки (і як їх уникнути)
-
-- **Overdocumentation** → почни з мінімуму
-- “Діаграми для галочки” → діаграма має відповідати на питання
-- Немає ownership → знання гниє
-- Немає тригерів → ніхто не фіксує рішення (ADR)
-- Немає пошуку/навігації → ніхто не читає
-
-<!--
-28:30–29:15.
--->
-
----
-layout: section
----
-
 # ADR
 
-### останній артефакт у навігації
+### solution/ і рішення в навігації
 
-<!-- 29:15–29:20 -->
+<!-- 25:15–25:25 -->
 
 ---
 layout: two-cols-header
@@ -726,6 +566,170 @@ layout: default
 
 ---
 layout: default
+---
+layout: section
+---
+
+# Tooling
+
+### Чому Fumadocs
+
+<!-- 26:15–26:25 -->
+
+---
+layout: default
+---
+
+## Чому документація “в коді” має шанс вижити
+
+- Поруч з PR і review
+- Має **ownership** і історію
+- Searchable (і для людей, і для AI/LLM)
+- Може мати автоматизації (індекси, лінки, генерацію)
+
+Але потрібен інструмент, який **не заважає**.
+
+<!--
+26:25–27:30.
+-->
+
+---
+layout: two-cols
+---
+
+## Fumadocs: сильні сторони для Architecture as Code
+
+::left::
+- Next.js + MDX
+- Навігація через `meta.json`
+- Пошук
+- Гарний UI (dark/light)
+- Компоненти для діаграм/вʼюверів
+
+::right::
+### Для команд
+- легко почати
+- легко стандартизувати
+- легко оновлювати
+
+> Головне: “правильний шлях” стає найпростішим.
+
+<!--
+27:30–28:30.
+-->
+
+---
+layout: two-cols
+---
+
+## Mermaid + PlantUML: коли що використовувати
+
+::left::
+### Mermaid
+- швидко
+- достатньо для C4/flow/seq
+- прямо в MD/MDX
+
+### PlantUML
+- коли потрібна UML-нотація
+- ERD/seq на складні системи
+
+::right::
+```mermaid
+flowchart LR
+  Mdx[MDX_file] --> Route[Diagram_route]
+  Route --> Kroki[Kroki_service]
+  Kroki --> Svg[SVG]
+  Svg --> Viewer[Diagram_viewer]
+```
+
+<!--
+28:30–29:00.
+-->
+
+---
+layout: default
+---
+
+## Docs pipeline: як зробити знання “видимим” у процесі
+
+```mermaid
+flowchart TD
+  Change[Code_change] --> Need{"Architecture impact?"}
+  Need -- yes --> ADR[Update_or_add_ADR]
+  Need -- yes --> Diag[Update_diagrams]
+  Need -- no --> PR[PR]
+  ADR --> PR
+  Diag --> PR
+  PR --> Review["Review (dev+arch)"]
+  Review --> CI[CI_build_docs]
+  CI --> Deploy[Deploy_docs]
+  Deploy --> Search[Search_and_onboarding]
+```
+
+<!--
+29:00–29:30. Це “architecture as code” як процес.
+-->
+
+---
+
+# Щоб це не померло
+
+### правила і ownership
+
+<!-- 26:00–26:10 -->
+
+---
+layout: default
+---
+
+## PR checklist (коротко і жорстко)
+
+- Якщо міняю boundaries/контракти → **ADR (фіксуємо рішення) або діаграма** в тому ж PR
+- Якщо додаю сервіс/інтеграцію → оновити **C1/C2**
+- Якщо міняю дані → оновити **ERD**
+- Якщо міняю критичний флоу → оновити **sequence**
+
+> Нехай CI не блокує, але checklist має бути “соціальним контрактом”.
+
+<!--
+26:10–27:30.
+-->
+
+---
+layout: default
+---
+
+## Ownership: хто відповідає за якість знання
+
+- Власник розділу `architecture/*` (це role, не “титул”)
+- Ревʼю ADR: 1 domain + 1 platform
+- “Садівник” раз на квартал: прибрати/оновити superseded
+
+Мета: **зменшити ентропію**.
+
+<!--
+27:30–28:30.
+-->
+
+---
+layout: default
+---
+
+## Пастки (і як їх уникнути)
+
+- **Overdocumentation** → почни з мінімуму
+- “Діаграми для галочки” → діаграма має відповідати на питання
+- Немає ownership → знання гниє
+- Немає тригерів → ніхто не фіксує рішення (ADR)
+- Немає пошуку/навігації → ніхто не читає
+
+<!--
+28:30–29:15.
+-->
+
+---
+layout: section
 ---
 
 ## План впровадження (1 тиждень)
