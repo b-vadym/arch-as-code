@@ -232,13 +232,15 @@ layout: section
 <!-- 7:30–7:40 -->
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
-## Glossary: чому ставимо першим
+<div class="mb-8">
+  <h2 class="!mb-0">Glossary: чому ставимо першим</h2>
+</div>
 
 ::left::
-- Менше непорозумінь у PR/ревʼю (“actor”, “tenant”, “role”…)
+- Менше непорозумінь у MR/ревʼю (“actor”, “tenant”, “role”…)
 - Швидший онбординг: “що означає слово X?”
 - Єдине місце, де фіксуємо **доменно-специфічні** терміни
 - Тримайте коротким: 1–3 речення + приклад + посилання
@@ -266,7 +268,7 @@ layout: default
 
 - Зʼявився новий actor/role/permission
 - Зʼявилась нова сутність/стан/етап процесу
-- У PR/ревʼю почались суперечки “як це називається”
+- У MR/ревʼю почались суперечки “як це називається”
 - Пішли назви в API/DB/UI — зафіксуйте офіційний термін
 - Якщо термін має синоніми — додайте “не плутати з”
 
@@ -563,7 +565,7 @@ layout: default
 2. Ставимо статус **Proposed**
 3. Заповнюємо: Context / Decision / Consequences
 4. Оновлюємо індекс ADR (таблиця або `meta.json`)
-5. В PR:
+5. В MR:
    - 1–2 ревʼювери
    - якщо треба — оновлюємо C1/C2/seq/ERD
 
@@ -591,7 +593,7 @@ layout: default
 
 ## Чому документація “в коді” має шанс вижити
 
-- Поруч з PR і review
+- Поруч з MR і review
 - Має **ownership** і історію
 - Searchable (і для людей, і для AI/LLM)
 - Може мати автоматизації (індекси, лінки, генерацію)
@@ -667,10 +669,10 @@ flowchart TD
   Change[Code_change] --> Need{"Architecture impact?"}
   Need -- yes --> ADR[Update_or_add_ADR]
   Need -- yes --> Diag[Update_diagrams]
-  Need -- no --> PR[PR]
-  ADR --> PR
-  Diag --> PR
-  PR --> Review["Review (dev+arch)"]
+  Need -- no --> MR[MR]
+  ADR --> MR
+  Diag --> MR
+  MR --> Review["Review (dev+arch)"]
   Review --> CI[CI_build_docs]
   CI --> Deploy[Deploy_docs]
   Deploy --> Search[Search_and_onboarding]
@@ -692,9 +694,9 @@ flowchart TD
 layout: default
 ---
 
-## PR checklist (коротко і жорстко)
+## MR checklist (коротко і жорстко)
 
-- Якщо міняю boundaries/контракти → **ADR (фіксуємо рішення) або діаграма** в тому ж PR
+- Якщо міняю boundaries/контракти → **ADR (фіксуємо рішення) або діаграма** в тому ж MR
 - Якщо додаю сервіс/інтеграцію → оновити **C1/C2**
 - Якщо міняю дані → оновити **ERD**
 - Якщо міняю критичний флоу → оновити **sequence**
@@ -747,7 +749,7 @@ layout: section
 - День 2: напишіть **3 ADR** (stack, auth, storage)
 - День 3: зробіть **C1 + C2**
 - День 4: 1 sequence для найкритичнішого флоу
-- День 5: введіть PR checklist + ownership
+- День 5: введіть MR checklist + ownership
 
 Потім: “садівник” раз на квартал.
 
@@ -767,7 +769,7 @@ layout: two-cols
 - Ваш репозиторій/темплейт: `https://github.com/ORG/REPO`
 - Слайди: `https://example.com/slides`
 
-> Порада: зробіть **перший ADR** уже в наступному PR.
+> Порада: зробіть **перший ADR** уже в наступному MR.
 
 ::right::
 <div class="flex flex-col items-center gap-6">
