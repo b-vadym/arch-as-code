@@ -557,11 +557,16 @@ layout: default
 
 ---
 layout: section
+class: text-center
 ---
+
+<div class="flex flex-col items-center justify-center w-full">
 
 # ADR
 
-### solution/ і рішення в навігації
+<p class="text-lg opacity-90 mt-3 mb-0">Architecture Decision Record — запис архітектурного рішення</p>
+
+</div>
 
 <!-- 25:15–25:25 -->
 
@@ -569,20 +574,24 @@ layout: section
 layout: two-cols-header
 ---
 
-<div class="mb-8">
-  <h2 class="!mb-0">ADR: що має бути всередині (і коли писати)</h2>
+<div class="mb-6">
+  <h2 class="!mb-0">ADR: що всередині і коли писати</h2>
+  <p class="text-sm opacity-85 mt-1 m-0">структура документа і тригери</p>
 </div>
 
-:::left::
-### Коли потрібен ADR
-- Міняємо boundaries/контракти
-- Додаємо інфраструктурний компонент (черги/кеш/observability)
-- Обираємо технологію або підхід “надовго”
+::left::
+**Коли потрібен ADR**
+- Зміна **boundaries** або контрактів між сервісами
+- Новий інфраструктурний компонент (черги, кеш, observability)
+- Вибір технології або підходу «надовго»
 
-### Наслідки = чесні trade-offs
-- **Positive / Negative / Risks**
+**Наслідки = чесні trade-offs**
+- **Positive** / **Negative** / **Risks** — без прикрас
 
-:::right::
+::right::
+<div class="text-xs opacity-90">
+**Шаблон ADR**
+</div>
 ```md
 ---
 title: "ADR-XXX: коротка назва"
@@ -596,29 +605,24 @@ status: Proposed
 ...
 
 ## Consequences
-### Positive
-...
-### Negative
-...
-### Risks
+### Positive / Negative / Risks
 ...
 ```
 
 ---
-layout: two-cols
+layout: default
 ---
 
-<div class="mb-8">
+<div class="mb-6">
   <h2 class="!mb-0">ADR: життєвий цикл</h2>
 </div>
 
-:::left::
 - **RFC** → **Proposed** → **Accepted** → **Superseded**
 - Це не бюрократія: це контроль **стану знання**
 
-:::right::
 ```mermaid
 stateDiagram-v2
+  direction LR
   [*] --> RFC
   RFC --> Proposed: submit
   Proposed --> Accepted: approve
@@ -649,8 +653,6 @@ layout: default
 29:20–30:00. Фінальний push: “це робиться швидко”.
 -->
 
----
-layout: default
 ---
 layout: section
 ---
