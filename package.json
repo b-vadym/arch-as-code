@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build",
-    "build:gh-pages": "slidev build --base /open-api-client-gen/",
+    "build:gh-pages": "slidev build --base /fumadocs/",
     "export": "slidev export",
     "presenter": "slidev --remote"
   },
