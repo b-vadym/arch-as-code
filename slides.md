@@ -714,6 +714,13 @@ layout: default
       <td class="px-2 py-1"><code>meta.json</code></td>
       <td class="px-2 py-1 bg-primary/15 border-l-2 border-primary"><code>meta.json</code></td>
     </tr>
+    <tr>
+      <td class="pr-4 py-1"><strong>Пошук</strong></td>
+      <td class="px-2 py-1">плагіни (lunr, Material)</td>
+      <td class="px-2 py-1">вбудований, Algolia</td>
+      <td class="px-2 py-1">flexsearch / плагіни</td>
+      <td class="px-2 py-1 bg-primary/15 border-l-2 border-primary">✓ з коробки</td>
+    </tr>
   </tbody>
 </table>
 
