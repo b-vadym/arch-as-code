@@ -658,24 +658,6 @@ layout: default
 **Що робимо** — тримаємо специфікацію в репо (наприклад `open_api/api-doc.yaml`), збираємо з неї сторінки в тому ж docs-сайті, де C4, ADR, glossary. Зміни в API = MR з оновленням специфікації; фронт і партнери беруть контракт звідти.
 
 ---
-layout: default
----
-
-<div class="mb-8">
-  <h2 class="!mb-0">Що ще є в проєкті, але не встигли показати в слайдах</h2>
-  <p class="text-sm opacity-85 mt-1 m-0">артефакти з Healup, які теж частина Architecture as Code</p>
-</div>
-
-- **C3 (Components)** — деталізація після C1/C2 (у нас: frontend, backend)
-- **API-документація як код** — OpenAPI-специфікація в репо + згенеровані сторінки ендпоінтів
-- **Process** — процес у репо: git-workflow, CI/CD (як частина документації, не тільки pipeline)
-- **Legal / compliance** — HIPAA, data privacy тощо версійовані поруч із архітектурою
-- **ADR за доменами** — general, backend, frontend, data, security, infrastructure, realtime (структура, яку не розкладали на слайдах)
-- **Доменні словники** — окремі glossary (наприклад HIPAA, infrastructure-terms) окремо від загального
-
-<p class="mt-6 text-sm opacity-85 border-l-2 border-primary/40 pl-4">Усе це теж у репо, в MR і в навігації — показуємо, що «архітектура як код» не обмежується тим, що встигли розібрати по слайдах.</p>
-
----
 layout: section
 ---
 
