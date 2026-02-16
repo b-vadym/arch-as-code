@@ -121,17 +121,21 @@ layout: default
 
 ## Architecture as Code — як це працює
 
+<div class="grid place-content-center min-h-[65vh] [&_.slidev-code]:!scale-[1.75]">
+
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "24px"}}}%%
+%%{init: {"themeVariables": {"fontSize": "36px"}}}%%
 flowchart LR
-  Change["Code change"] --> PR["Pull request"]
-  PR --> Review["Review"]
+  Change["Code change"] --> MR["Merge request"]
+  MR --> Review["Review"]
   Review --> Merge["Merge"]
   Merge --> Docs["Docs build"]
-  PR --> ADR["ADR / diagrams"]
+  MR --> ADR["ADR / diagrams"]
   ADR --> Docs
   Docs --> Knowledge["Searchable knowledge"]
 ```
+
+</div>
 
 <!--
 4:30–5:30. Визначення + коротко “як це працює”.
