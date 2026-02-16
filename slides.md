@@ -34,7 +34,9 @@ transition: slide-left
 layout: default
 ---
 
-## Кейс: Treemily (довготривалий проєкт)
+<div class="mb-8">
+  <h2 class="!mb-0">Кейс: Treemily (довготривалий проєкт)</h2>
+</div>
 
 - Проєкт тривав **роками**
 - Цілісної архітектурної документації **не було**
@@ -48,7 +50,9 @@ layout: default
 layout: default
 ---
 
-## Онбординг без документації = висока вартість контексту
+<div class="mb-8">
+  <h2 class="!mb-0">Онбординг без документації = висока вартість контексту</h2>
+</div>
 
 Коли нова людина питає “чому тут так?”, типові відповіді:
 - **ніхто вже не памʼятає**
@@ -67,7 +71,9 @@ layout: default
 layout: default
 ---
 
-## Травень 2025: “зробіть архітектурну документацію”
+<div class="mb-8">
+  <h2 class="!mb-0">Травень 2025: “зробіть архітектурну документацію"</h2>
+</div>
 
 І виявилось, що потрібно:
 - відновлювати контекст “з нуля” (рішення, інтеграції, межі компонентів)
@@ -87,7 +93,9 @@ layout: default
 layout: default
 ---
 
-## Спочатку думали: Google Docs або Confluence
+<div class="mb-8">
+  <h2 class="!mb-0">Спочатку думали: Google Docs або Confluence</h2>
+</div>
 
 - Це звучить логічно: “напишемо один документ і буде ок”
 - Але далі починається реальність:
@@ -104,7 +112,9 @@ layout: default
 layout: default
 ---
 
-## Architecture as Code
+<div class="mb-8">
+  <h2 class="!mb-0">Architecture as Code</h2>
+</div>
 
 це підхід, коли архітектурні знання:
 
@@ -119,7 +129,9 @@ layout: default
 layout: default
 ---
 
-## Architecture as Code — як це працює
+<div class="mb-8">
+  <h2 class="!mb-0">Architecture as Code — як це працює</h2>
+</div>
 
 <!-- <div class="grid place-content-center min-h-[65vh] [&_.slidev-code]:!scale-[1.75]"> -->
 
@@ -171,7 +183,9 @@ layout: two-cols-header
 layout: default
 ---
 
-## Артефакти, які ми вже впровадили
+<div class="mb-8">
+  <h2 class="!mb-0">Артефакти, які ми вже впровадили</h2>
+</div>
 
 Мінімальний набір, який реально підтримується в роботі:
 
@@ -190,7 +204,9 @@ layout: default
 layout: default
 ---
 
-## Як це виглядає в репо (приклад структури)
+<div class="mb-8">
+  <h2 class="!mb-0">Як це виглядає в репо (приклад структури)</h2>
+</div>
 
 ```text
 docs/
@@ -292,7 +308,9 @@ layout: section
 layout: default
 ---
 
-## C4 в 60 секунд
+<div class="mb-8">
+  <h2 class="!mb-0">C4 в 60 секунд</h2>
+</div>
 
 <div class="absolute top-8 right-10 opacity-95">
   <img src="/c4-badge.svg" alt="C4" style="width: 84px; height: 84px;" />
@@ -312,7 +330,9 @@ layout: default
 layout: two-cols
 ---
 
-## C1: System Context (спрощений приклад)
+<div class="mb-8">
+  <h2 class="!mb-0">C1: System Context (спрощений приклад)</h2>
+</div>
 
 ::left::
 Сильна сторона C1:
@@ -341,7 +361,9 @@ flowchart LR
 layout: two-cols
 ---
 
-## C2: Containers (спрощений приклад)
+<div class="mb-8">
+  <h2 class="!mb-0">C2: Containers (спрощений приклад)</h2>
+</div>
 
 ::left::
 Що дає C2:
@@ -368,7 +390,9 @@ flowchart TD
 layout: two-cols
 ---
 
-## ERD: де дані — там і архітектура
+<div class="mb-8">
+  <h2 class="!mb-0">ERD: де дані — там і архітектура</h2>
+</div>
 
 - **ERD (Entity-Relationship Diagram)** — діаграма сутностей і звʼязків у даних (таблиці/моделі та їхні відносини).
 - Корисна, коли зʼявляються **аудит**, **комплаєнс** або складні доменні звʼязки
@@ -400,7 +424,9 @@ erDiagram
 layout: two-cols
 ---
 
-## Sequence: критичний флоу як код
+<div class="mb-8">
+  <h2 class="!mb-0">Sequence: критичний флоу як код</h2>
+</div>
 
 ::left::
 Флоу, який має сенс документувати:
@@ -436,7 +462,9 @@ sequenceDiagram
 layout: two-cols
 ---
 
-## State machine: allowed transitions як “контракт”
+<div class="mb-8">
+  <h2 class="!mb-0">State machine: allowed transitions як "контракт"</h2>
+</div>
 
 ::left::
 **State machine** — це опис станів і **дозволених переходів** між ними.
@@ -477,7 +505,9 @@ layout: section
 layout: default
 ---
 
-## Tech stack / Infra / Solutions: що тут важливо
+<div class="mb-8">
+  <h2 class="!mb-0">Tech stack / Infra / Solutions: що тут важливо</h2>
+</div>
 
 - **Tech stack**: 1 сторінка “що ми використовуємо і чому” + лінки на ADR
 - **Infrastructure**: середовища, CI/CD, observability, compliance-обмеження
@@ -503,7 +533,9 @@ layout: section
 layout: two-cols-header
 ---
 
-## ADR: що має бути всередині (і коли писати)
+<div class="mb-8">
+  <h2 class="!mb-0">ADR: що має бути всередині (і коли писати)</h2>
+</div>
 
 :::left::
 ### Коли потрібен ADR
@@ -540,7 +572,9 @@ status: Proposed
 layout: two-cols
 ---
 
-## ADR: життєвий цикл
+<div class="mb-8">
+  <h2 class="!mb-0">ADR: життєвий цикл</h2>
+</div>
 
 :::left::
 - **RFC** → **Proposed** → **Accepted** → **Superseded**
@@ -561,7 +595,9 @@ stateDiagram-v2
 layout: default
 ---
 
-## Демо: додати ADR за 5 хв
+<div class="mb-8">
+  <h2 class="!mb-0">Демо: додати ADR за 5 хв</h2>
+</div>
 
 1. Створюємо файл `ADR-XXX` (шаблон)
 2. Ставимо статус **Proposed**
@@ -593,7 +629,9 @@ layout: section
 layout: default
 ---
 
-## Чому документація “в коді” має шанс вижити
+<div class="mb-8">
+  <h2 class="!mb-0">Чому документація “в коді” має шанс вижити</h2>
+</div>
 
 - Поруч з MR і review
 - Має **ownership** і історію
@@ -610,7 +648,9 @@ layout: default
 layout: two-cols
 ---
 
-## Fumadocs: сильні сторони для Architecture as Code
+<div class="mb-8">
+  <h2 class="!mb-0">Fumadocs: сильні сторони для Architecture as Code</h2>
+</div>
 
 ::left::
 - Next.js + MDX
@@ -635,7 +675,9 @@ layout: two-cols
 layout: two-cols
 ---
 
-## Mermaid + PlantUML: коли що використовувати
+<div class="mb-8">
+  <h2 class="!mb-0">Mermaid + PlantUML: коли що використовувати</h2>
+</div>
 
 ::left::
 ### Mermaid
@@ -664,7 +706,9 @@ flowchart LR
 layout: default
 ---
 
-## Docs pipeline: як зробити знання “видимим” у процесі
+<div class="mb-8">
+  <h2 class="!mb-0">Docs pipeline: як зробити знання “видимим” у процесі</h2>
+</div>
 
 ```mermaid
 flowchart TD
@@ -696,7 +740,9 @@ flowchart TD
 layout: default
 ---
 
-## MR checklist (коротко і жорстко)
+<div class="mb-8">
+  <h2 class="!mb-0">MR checklist (коротко і жорстко)</h2>
+</div>
 
 - Якщо міняю boundaries/контракти → **ADR (фіксуємо рішення) або діаграма** в тому ж MR
 - Якщо додаю сервіс/інтеграцію → оновити **C1/C2**
@@ -713,7 +759,9 @@ layout: default
 layout: default
 ---
 
-## Ownership: хто відповідає за якість знання
+<div class="mb-8">
+  <h2 class="!mb-0">Ownership: хто відповідає за якість знання</h2>
+</div>
 
 - Власник розділу `architecture/*` (це role, не “титул”)
 - Ревʼю ADR: 1 domain + 1 platform
@@ -729,7 +777,9 @@ layout: default
 layout: default
 ---
 
-## Пастки (і як їх уникнути)
+<div class="mb-8">
+  <h2 class="!mb-0">Пастки (і як їх уникнути)</h2>
+</div>
 
 - **Overdocumentation** → почни з мінімуму
 - “Діаграми для галочки” → діаграма має відповідати на питання
@@ -745,7 +795,9 @@ layout: default
 layout: section
 ---
 
-## План впровадження (1 тиждень)
+<div class="mb-8">
+  <h2 class="!mb-0">План впровадження (1 тиждень)</h2>
+</div>
 
 - День 1: додайте структуру `architecture/*`
 - День 2: напишіть **3 ADR** (stack, auth, storage)
@@ -763,7 +815,9 @@ layout: section
 layout: two-cols
 ---
 
-## Далі що? (і де подивитись)
+<div class="mb-8">
+  <h2 class="!mb-0">Далі що? (і де подивитись)</h2>
+</div>
 
 ::left::
 ### Лінки
@@ -791,7 +845,9 @@ layout: end
 
 # Дякую!
 
-## Питання?
+<div class="mb-8">
+  <h2 class="!mb-0">Питання?</h2>
+</div>
 
 <style>
 :root {
