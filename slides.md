@@ -816,41 +816,19 @@ layout: default
 -->
 
 ---
-layout: two-cols
+layout: section
 ---
 
-<div class="mb-8">
-  <h2 class="!mb-0">Далі що? (і де подивитись)</h2>
-</div>
-
-::left::
-### Лінки
-- [Fumadocs](https://fumadocs.dev)
-- Ваш репозиторій/темплейт: `https://github.com/ORG/REPO`
-- Слайди: `https://example.com/slides`
-
-> Порада: зробіть **перший ADR** уже в наступному MR.
-
-::right::
-<div class="flex flex-col items-center gap-6">
-  <div class="text-sm opacity-80">Fumadocs</div>
-  <QrLink value="https://fumadocs.dev" :size="180" />
-  <div class="text-sm opacity-80">Ваш template/репо</div>
-  <QrLink value="https://github.com/ORG/REPO" :size="180" />
-</div>
-
-<!--
-29:45–30:00. CTA.
--->
+# Демо
 
 ---
 layout: end
 ---
 
-# Дякую!
-
-<div class="mb-8">
-  <h2 class="!mb-0">Питання?</h2>
+<div class="flex flex-col items-center justify-center w-full h-full gap-8">
+  <h1 class="!mb-0">Питання / відповіді</h1>
+  <a href="https://b-vadym.github.io/arch-as-code" target="_blank" rel="noopener" class="text-primary font-medium no-underline hover:underline">b-vadym.github.io/arch-as-code</a>
+  <QrLink value="https://b-vadym.github.io/arch-as-code/1" :size="200" />
 </div>
 
 <style>
