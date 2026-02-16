@@ -509,18 +509,51 @@ layout: default
 ---
 
 <div class="mb-8">
-  <h2 class="!mb-0">Tech stack / Infra / Solutions: що тут важливо</h2>
+  <h2 class="!mb-0">Tech stack</h2>
+  <p class="text-sm opacity-85 mt-1 m-0">одна сторінка: що використовуємо і чому</p>
 </div>
 
-- **Tech stack**: 1 сторінка “що ми використовуємо і чому” + лінки на ADR
-- **Infrastructure**: середовища, CI/CD, observability, compliance-обмеження
-- **Solutions**: повторювані рішення для cross-cutting concerns (auth, audit, encryption, uploads…)
+- Фіксуємо **стек** (мови, фреймворки, БД, черги тощо) і **обґрунтування вибору**
+- Лінки на **ADR**, де прийняті ключові технічні рішення
+- Один документ — один джерело правди для онбордингу і оцінок
 
-> У `meta.json` це йде **перед ADR**, бо створює контекст для рішень.
+<p class="mt-6 text-sm opacity-85 border-l-2 border-primary/40 pl-4">У навігації (<code>meta.json</code>) Tech stack, Infra і Solutions йдуть <strong>перед ADR</strong> — створюють контекст для рішень.</p>
 
 <!--
 24:10–25:15. Коротко: ці сторінки дають контекст, без якого ADR буде “в повітрі”.
 -->
+
+---
+layout: default
+---
+
+<div class="mb-8">
+  <h2 class="!mb-0">Infrastructure</h2>
+  <p class="text-sm opacity-85 mt-1 m-0">середовища, пайплайни, спостереження</p>
+</div>
+
+- **Середовища** — dev, staging, prod; хостинг, контейнери
+- **CI/CD** — збірка, деплой, артефакти
+- **Observability** — логи, метрики, трейсинг
+- **Compliance** — обмеження (регіони, шифрування, збереження даних)
+
+<p class="mt-6 text-sm opacity-85">Без цього контексту ADR про інфраструктурні рішення висять «в повітрі».</p>
+
+---
+layout: default
+---
+
+<div class="mb-8">
+  <h2 class="!mb-0">Solutions</h2>
+  <p class="text-sm opacity-85 mt-1 m-0">повторювані рішення для cross-cutting concerns</p>
+</div>
+
+- **Auth** — хто як авторизується, інтеграції (OAuth, SSO)
+- **Audit** — що логуємо, де зберігаємо
+- **Encryption** — at rest, in transit; ключі
+- **Uploads / file handling** — пресайни, валідація, storage
+
+<p class="mt-6 text-sm opacity-85">Короткі сторінки з посиланнями на ADR і діаграми, де це описано детальніше.</p>
 
 ---
 layout: section
