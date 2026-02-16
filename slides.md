@@ -671,6 +671,56 @@ layout: section
 layout: default
 ---
 
+<div class="mb-6">
+  <h2 class="!mb-0">Вибір tooling: порівняння характеристик</h2>
+</div>
+
+<table class="text-sm">
+  <thead>
+    <tr>
+      <th class="text-left pr-4">Критерій</th>
+      <th class="text-left px-2"><img src="https://www.google.com/s2/favicons?domain=www.mkdocs.org&sz=32" width="20" height="20" class="inline-block align-middle rounded" alt="" /> <a href="https://www.mkdocs.org/" target="_blank" rel="noopener">MkDocs</a></th>
+      <th class="text-left px-2"><img src="https://docusaurus.io/img/docusaurus.png" width="20" height="20" class="inline-block align-middle rounded" alt="" /> <a href="https://docusaurus.io/" target="_blank" rel="noopener">Docusaurus</a></th>
+      <th class="text-left px-2"><img src="https://www.google.com/s2/favicons?domain=nextra.site&sz=32" width="20" height="20" class="inline-block align-middle rounded" alt="" /> <a href="https://nextra.site/" target="_blank" rel="noopener">Nextra</a></th>
+      <th class="text-left px-2 bg-primary/15 border-l-2 border-primary rounded-r"><img src="https://www.fumadocs.dev/icon.png" width="20" height="20" class="inline-block align-middle rounded" alt="" /> <a href="https://www.fumadocs.dev/" target="_blank" rel="noopener">Fumadocs</a> <span class="text-primary font-medium">✓ обрано</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="pr-4 py-1"><strong>Стек</strong></td>
+      <td class="px-2 py-1">Python, Markdown + YAML</td>
+      <td class="px-2 py-1">React (Meta)</td>
+      <td class="px-2 py-1">Next.js + MDX</td>
+      <td class="px-2 py-1 bg-primary/15 border-l-2 border-primary">Next.js + MDX</td>
+    </tr>
+    <tr>
+      <td class="pr-4 py-1"><strong>OpenAPI / REST API</strong></td>
+      <td class="px-2 py-1">—</td>
+      <td class="px-2 py-1">плагіни</td>
+      <td class="px-2 py-1">—</td>
+      <td class="px-2 py-1 bg-primary/15 border-l-2 border-primary">✓ з коробки</td>
+    </tr>
+    <tr>
+      <td class="pr-4 py-1"><strong>Кастомізація</strong></td>
+      <td class="px-2 py-1">теми, плагіни</td>
+      <td class="px-2 py-1">плагіни, теми</td>
+      <td class="px-2 py-1">конфіг, опінійований</td>
+      <td class="px-2 py-1 bg-primary/15 border-l-2 border-primary">повний контроль, «framework you can break»</td>
+    </tr>
+    <tr>
+      <td class="pr-4 py-1"><strong>Навігація</strong></td>
+      <td class="px-2 py-1">YAML</td>
+      <td class="px-2 py-1">конфіг</td>
+      <td class="px-2 py-1"><code>meta.json</code></td>
+      <td class="px-2 py-1 bg-primary/15 border-l-2 border-primary"><code>meta.json</code></td>
+    </tr>
+  </tbody>
+</table>
+
+---
+layout: default
+---
+
 <div class="mb-8">
   <h2 class="!mb-0">Чому документація “в коді” має шанс вижити</h2>
 </div>
@@ -708,10 +758,6 @@ layout: two-cols
 - легко оновлювати
 
 > Головне: “правильний шлях” стає найпростішим.
-
-<!--
-27:30–28:30.
--->
 
 ---
 layout: two-cols
