@@ -319,8 +319,8 @@ layout: default
 layout: two-cols
 ---
 
-<div class="mb-8">
-  <h2 class="!mb-0">C1: System Context (спрощений приклад)</h2>
+<div class=”mb-8”>
+  <h2 class=”!mb-0”>C1: System Context</h2>
 </div>
 
 ::left::
@@ -332,14 +332,23 @@ layout: two-cols
 
 ::right::
 ```mermaid
-flowchart LR
-  Admin[Admin] --> Platform[Platform]
-  Clinician[Clinician] --> Platform
-  Patient[Patient] --> Platform
+flowchart TB
+  SuperAdmin[“👑 Super Admin\nPlatform owner”]
+  ClinicAdmin[“👤 Clinic Admin\nClinic-level administrator”]
+  Clinician[“👤 Clinician\nDoctor/Provider”]
+  Patient[“👤 Patient\nCare recipient”]
 
-  Platform --> Email[Email_service]
-  Platform --> Sms[SMS_gateway]
-  Platform --> Storage[Object_storage]
+  Platform[“🎯 HealUp Platform\nCare Journey Automation”]
+
+  SuperAdmin --> Platform
+  ClinicAdmin --> Platform
+  Clinician --> Platform
+  Patient --> Platform
+
+  Platform --> SMS[“📱 SMS Gateway\nTwilio · 2FA & notifications”]
+  Platform --> Email[“✉️ Email Service\nTransactional + invite emails”]
+  Platform --> Storage[“💾 Object Storage\nS3/MinIO · docs, media, exports”]
+  Platform --> Monitoring[“🔍 Monitoring & Logging\nSentry”]
 ```
 
 <!--
