@@ -356,28 +356,40 @@ flowchart TB
 -->
 
 ---
-layout: two-cols
+layout: default
 ---
 
-<div class="mb-8">
-  <h2 class="!mb-0">C2: Containers (спрощений приклад)</h2>
+<div class=”mb-4”>
+  <h2 class=”!mb-0”>C2: Containers</h2>
+  <p class=”text-sm opacity-85 m-0”>залежності між частинами · де живуть дані · де кеш і зовнішні сервіси</p>
 </div>
 
-::left::
-Що дає C2:
-
-- залежності між “великими частинами”
-- де живуть дані
-- де кеш/черги/обсервабіліті
-
-::right::
 ```mermaid
-flowchart TD
-  Web[Web_app] --> Api[Backend_API]
-  Api --> Db[(Primary_DB)]
-  Api --> Redis[(Redis)]
-  Api --> S3[(Object_storage)]
-  Api --> Obs[Monitoring]
+%%{init: {“themeVariables”: {“fontSize”: “11px”}}}%%
+flowchart TB
+  SuperAdmin[“👑 Super Admin”] --> SAP
+  ClinicAdmin[“👤 Clinic Admin”] --> AP
+  Clinician[“👤 Clinician”]    --> CA
+  Patient[“👤 Patient”]        --> PA
+
+  subgraph Platform[“HealUp Platform”]
+    SAP[“Super Admin Portal\nReact Web App”]
+    AP[“Admin Portal\nReact Web App”]
+    CA[“Clinician Mobile App\nReact Native”]
+    PA[“Patient Mobile App\nReact Native”]
+    API[“🎯 Backend API\nSymfony REST API”]
+    S3[“💾 Object Storage\nS3/MinIO”]
+    DBm[(“MySQL main”)]
+    DBa[(“MySQL audit”)]
+    Cache[(“Redis Cache”)]
+
+    SAP & AP & CA & PA --> API
+    API --> S3 & DBm & DBa & Cache
+  end
+
+  API --> SMS[“📱 SMS Gateway\nTwilio”]
+  API --> Email[“✉️ Email Service”]
+  API --> Mon[“🔍 Sentry”]
 ```
 
 <!--
