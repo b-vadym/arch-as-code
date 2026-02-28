@@ -785,24 +785,6 @@ layout: default
 ---
 
 <div class="mb-8">
-  <h2 class="!mb-0">Ownership: хто відповідає за якість знання</h2>
-</div>
-
-- Власник розділу `architecture/*` (це role, не “титул”)
-- Ревʼю ADR: 1 domain + 1 platform
-- “Садівник” раз на квартал: прибрати/оновити superseded
-
-Мета: **зменшити ентропію**.
-
-<!--
-27:30–28:30.
--->
-
----
-layout: default
----
-
-<div class="mb-8">
   <h2 class="!mb-0">Пастки (і як їх уникнути)</h2>
 </div>
 
